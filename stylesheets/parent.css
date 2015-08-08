@@ -1,0 +1,75 @@
+#topofpage {
+}
+
+#portrait{
+	position: fixed;
+	top:0px;
+	left:0pxS;
+	width: 22em;
+	height: 22em
+
+
+}
+
+#waterfall {
+	position: fixed;
+	top:0px;
+	left: 22.5em;
+	width: 100%;
+	height: 22em;
+	float:right;
+}
+
+.topimages {
+}
+
+#title {
+
+	position: fixed;
+	font-size: 500%;
+	font-family: Serif;
+	color: white;
+	left: 4.6em;
+	z-index: 4;
+	top: 0em;
+	
+}
+
+#catchphrase {
+	position: fixed;
+	font-size: 200%;
+	font-family: Serif;
+	color: white;
+	top: 6.3em;
+	left: 16.5em;
+	z-index: 4;
+}
+
+.toplinks {
+	position: fixed;
+	color: white;
+	font-size: 20px;
+	font-family: Serif;
+	color: white;
+	top: 14.5em;
+	left: 0em;
+	z-index: 4;
+}
+
+.toplinks a:link {
+	text-decoration: none;
+	margin-left: 5em;
+	color: black;
+	background-color:white;
+
+
+}
+
+.toplinks a:hover {
+	background-color: black;
+	color: white;
+}
+
+#filler {
+	opacity: 0;
+}
