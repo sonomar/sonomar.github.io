@@ -11,7 +11,7 @@
 
 }
 
-#waterfall {
+#banner {
 	position: fixed;
 	top:0px;
 	left: 22.5em;
@@ -28,6 +28,7 @@
 	position: fixed;
 	font-size: 500%;
 	font-family: Serif;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	color: white;
 	left: 4.6em;
 	z-index: 4;
@@ -39,6 +40,7 @@
 	position: fixed;
 	font-size: 200%;
 	font-family: Serif;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	color: white;
 	top: 6.3em;
 	left: 16.5em;
@@ -61,10 +63,11 @@
 	margin-left: 5em;
 	color: black;
 	background-color:white;
-
-
 }
 
+.toplinks a:visited {
+	color: black;
+}
 .toplinks a:hover {
 	background-color: black;
 	color: white;

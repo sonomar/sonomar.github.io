@@ -20,7 +20,9 @@
 
 .footer {
 	position: fixed;
-	bottom: 0;
+	bottom: 0%;
+	height: 2.5em;
+	padding-top:-5%;
 	padding-right:.5em;
 	color: white;
 	background-color: black;
@@ -49,8 +51,8 @@ h4 a:hover {
 	border: black 2px solid;
 	padding: .3em;
 	position: fixed;
-	bottom: .5em;
-	left:42.5em;
+	bottom: 3em;
+	left:49.5em;
 
 }
 
@@ -71,7 +73,7 @@ h4 a:hover {
 	padding: .3em;
 	position: fixed;
 	bottom: .5em;
-	left: 48em;
+	left: 50em;
 }
 
 #blogbutton a {

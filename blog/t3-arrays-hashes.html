@@ -12,7 +12,7 @@
 
       <img class="topimages" id="portrait" src="../imgs/portrait.jpg" alt="picoflawson"/>
       
-      <img class="topimages" id="waterfall" src="../imgs/falls.jpg" alt="picofwaterfall"/>
+      <img class="topimages" id="banner" src="../imgs/talinn.png" alt="bannerpic"/>
 
         <h1 id="title">Lawson Marlowe</h1>
 
@@ -89,24 +89,24 @@
       <p>
       I could talk about arrays all day, but it's time to discuss their clunky yet useful big brother, hashes. Let's say you don't just want a list of items like those you'd find in an array. If you want to create an accessable list of usernames and passwords for a library computer, for example, you don't want to have to keep track of two separate arrays, one consisting of the username, and the other consisting of the password. What if one of the arrays gets altered? It would make it very difficult to discern who's password goes to which username. This is where hashes come in handy. Here's what a hash looks like:</p>
         <aside class="example">
-      <p>new_hash = { "key1" => "object1"
-      <p>"key2" => "object2"</p>
-      <p>"username(key3)"" => "password(object3)"</p>
-      <p>"best_player_1(key4)"" => "pl#y@r(object4)"</p>
+      <p>new_hash = { "key1" => "value1"
+      <p>"key2" => "value2"</p>
+      <p>"username(key3)"" => "password(value3)"</p>
+      <p>"best_player_1(key4)"" => "pl#y@r(value4)"</p>
       <p>}</p>
       </aside> 
       <p>
-      Basically, a hash does the same thing as an array, but allows for a list of key items (key1, key2, username etc.) that reference related objects (object1, object2, password etc.). You will notice that 'object1' is connected to 'key1', just as 'password' is connected to 'username' in the above code. Just like with an array, we can access and manipulate this code, but by default an object stays connected to a key (unless you go out of your way to change it), so in the example of a library computer, this hash would keep each guest's username connected to their password. Similar to using arrays, we can create a new hash by giving it a name and setting it equal to a code like the one above, or set a name equal to Hash.new for an empty hash to add items to. Also like using arrays, we can access a key and it's object from the hash example above like this:  
+      Basically, a hash does the same thing as an array, but allows for a list of key items (key1, key2, username etc.) that reference related values (value1, value2, password etc.). You will notice that 'value1' is connected to 'key1', just as 'password' is connected to 'username' in the above code. Just like with an array, we can access and manipulate this code, but by default an value stays connected to a key (unless you go out of your way to change it), so in the example of a library computer, this hash would keep each guest's username connected to their password. Similar to using arrays, we can create a new hash by giving it a name and setting it equal to a code like the one above, or set a name equal to Hash.new for an empty hash to add items to. Also like using arrays, we can access a key and it's value from the hash example above like this:  
       </p>
       <aside class="example">
       <p>new_hash["best_player_1(key4)"]</p>
-      <p>printing the above code returns "pl#y@r(object4)"
+      <p>printing the above code returns "pl#y@r(value4)"
       </aside>
       <p>
-      By accessing a key from the above hash, we can view that key's object. Using this code, we can access and manipulate the key or object at the same time, while keeping the organization of the hash itself intact. Like arrays, hashes have many fun and useful methods that can help you when coding, too! '.has_key' will tell you if a key is present in the hash (useful for longer hashes), while calling .keys or .values after the name of your hash will give you a list of all of the names of those keys and values (values are another word for objects in a hash)! While I mentioned these methods separately, many methods in Ruby are interchangeable, and will work with arrays, hashes, and more! Feel free to experiment with methods using the previously posted link to Ruby-doc above.
+      By accessing a key from the above hash, we can view that key's value. Using this code, we can access and manipulate the key or value at the same time, while keeping the organization of the hash itself intact. Like arrays, hashes have many fun and useful methods that can help you when coding, too! '.has_key' will tell you if a key is present in the hash (useful for longer hashes), while calling .keys or .values after the name of your hash will give you a list of all of the names of those keys and values! While I mentioned these methods separately, many methods in Ruby are interchangeable, and will work with arrays, hashes, and more! Feel free to experiment with methods using the previously posted link to Ruby-doc above.
       </p> 
       <p>
-      So why am I ranting and raving about arrays and hashes? If all we're doing is creating and changing lists and accessing what's inside of them, how is that so useful to coding? Well, as I mentioned at the beginning of this post, coding is all about simplicity. For another example, think of your code as a big ol' jigsaw puzzle. All of those pieces are spread around randomly, and it's going to take an awfully long time to take just one piece and look for another piece that matches. But what if we decide to start by only looking for border pieces? Metaphorically, those border pieces make up an array of pieces with flat sides, versus those that don't. Another array that comes up are pieces with green-tree-colors in them, while another are pieces with red-brick bits. And what about the brick bits with bits of chimney in them? To look at that criteria and subcriteria, we're talking about hash! The key is red brick, while the object is fireplace! By grouping and combining pieces of the puzzle together, it is much easier to assemble the whole thing, and much faster! So if you're putting together thousands of lines of code to create a new pizza delivery app, wouldn't you prefer to do it faster and more easily? Well thank the lords of the code that arrays and hashes exist, then.
+      So why am I ranting and raving about arrays and hashes? If all we're doing is creating and changing lists and accessing what's inside of them, how is that so useful to coding? Well, as I mentioned at the beginning of this post, coding is all about simplicity. For another example, think of your code as a big ol' jigsaw puzzle. All of those pieces are spread around randomly, and it's going to take an awfully long time to take just one piece and look for another piece that matches. But what if we decide to start by only looking for border pieces? Metaphorically, those border pieces make up an array of pieces with flat sides, versus those that don't. Another array that comes up are pieces with green-tree-colors in them, while another are pieces with red-brick bits. And what about the brick bits with bits of chimney in them? To look at that criteria and subcriteria, we're talking about hash! The key is red brick, while the value is the fireplace! By grouping and combining pieces of the puzzle together, it is much easier to assemble the whole thing, and much faster! So if you're putting together thousands of lines of code to create a new pizza delivery app, wouldn't you prefer to do it faster and more easily? Well thank the lords of the code that arrays and hashes exist, then.
       </p>
     </section>
 </section>
