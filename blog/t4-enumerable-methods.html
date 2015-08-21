@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+  <title>t4 enumerable methods</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/parent.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogpost.css">
+</head>
+
+<body>
+
+    <section id="topofpage">
+
+      <img class="topimages" id="portrait" src="../imgs/portrait.jpg" alt="picoflawson"/>
+      
+      <img class="topimages" id="banner" src="../imgs/talinn.png" alt="bannerpic"/>
+
+        <h1 id="title">Lawson Marlowe</h1>
+
+          <h2 id="catchphrase">Coding the Human Mind</h2>
+
+            <h3 class="toplinks">
+              <p><span id="filler">This is filler to make the links work</span>
+              <a id="toplinkprofile" href="../site_pages/under_construction.html"> Profile </a>
+              <a id="toplinkprojects" href="../site_pages/under_construction.html"> Projects </a>
+              <a id="toplinkblog" href="blogindex.html"> Blog </a>
+              <a id="toplinklinks" href="../site_pages/under_construction.html"> Links </a></p>
+
+              </h3>
+    </section>
+
+<section id="blogpost">
+  <h1>Week 4, Day 5</h1>
+  <h2>Enumerable#map</h2>
+  <h4>August 21st, 2015</h4>
+
+    <section>
+
+      <p>
+    There are many useful enumerable methods when coding with ruby, some of them more complicated than others. An enumerable methods is one which looks through every item in an ordered list (array, hash, etc.) one by one, and does something to each of those items in order to produce a final object or list in response. Today I'll be discussing the '.map' enumerable method, which can be easily implemented, but used wisely can accomplish some very complicated goals. To implement the simplest version of this method, just take an array and add '.map' with an argument at the end of it, like this:
+      </p>
+      <aside class="example">
+      <p>[1,2,3,4,5].map("book")</p>
+      </aside> 
+      <p>
+    Yep, that's it! Calling 'map' on the array will create a new array, modifying or replacing each number in the array with the connected argument. In this case, the new array the example above returns looks like this:
+      </p>
+      <aside class="example">
+      <p>["book","book","book","book","book"]</p>
+      </aside> 
+      <p>
+Can you see what '.map' did to the array we called it on? This action is what makes '.map' an enumerator method. Just like all enumerators, it looked at each item in the supplied array and modified or according to the connected argument. So in the case of array [1,2,3,4,5], '.map' changed each number reach number, one by one, into the argument "book"!
+So now we can see why '.map' is called 'map' (and is actually interchangeable with '.collect.') It maps out and collected each array item, changing them as the enter the new array. We can do more than completely change each item in the array using '.map', though. By setting each item to a variable and then telling that variable to do something in the block following the method, we can manipulate each item in the original array in any way we wish and put those results into the new array. Check out this example of '.map' with a block in action:       
+      </p>
+      <aside class="example">
+      <p>input: [1,2,3,4,5].map {|item| item * 2}</p>
+      <p>output: [2,4,6,8,10]</p>
+      </aside> 
+      <p>
+Does the output make sense to you? Using '.map' with this block, the method looked at each item one by one. Each item the method looked at was labeled as 'item', then multiplied by 2. That 'item' was then pushed into a new array. The next item is then labeled 'item' and put through the same process. In the end we wind up with the new array containing the original items each multiplied by 2. This code may seem like a simple trick without many implications, but with some clever use of that block at the end of the method, we can do some pretty interesting things to the original array.        
+      </p>
+      <p>
+Let's say, for example, that we want to make a statement telling each name in an array of names that they are great? By taking that array of names and adding a string to the variable in the '.map' method, we can easily accomplish this goal. Here is what the code looks like:        
+      </p>
+      <aside class="example">
+      <p>input: [“Susan”, “John”, “Mandy”, “Joe”, “Vanessa”].map {|name| “#{name} is great!”}</p>
+      <p>output [“Susan is great!”, “John is great!”, “Mandy is great!”, “Joe is great!”, “Vanessa is great!”]</p>
+      </aside> 
+      <p>
+By adding a string to each item in the mapped array by using the block, we created a list of statements about each person in the original array. We can adapt and change each item however we see fit, and that includes the ability to add variables to the block. For one last example, here's the code to find the cube of any item in an array:        
+      </p>
+      <aside class="example">
+      <p>array.map {|integer| integer * integer * integer}</p>
+      </aside> 
+      <p>
+See how that code takes each item in the array and multiplies it by itself three times? Voila, cubes! I hope this blog helped you understand how the '.map' method works with any array. Feel free to get creative and see what other changes you can make with the method!        
+      </p>
+
+    </section>
+</section>
+
+
+        <aside id="mainbutton">
+          <a href="../index.html">Main Page</a>
+        </aside>
+
+        <aside id="blogbutton">
+          <a href="blogindex.html">Blog List</a>
+        </aside>  
+
+
+        <footer class="footer">
+
+            <h4 id="copyright">Copywrite Information, MIT License
+
+              <a href="../site_pages/under_construction.html">Site Map</a>
+              <a href="../site_pages/under_construction.html">About Me</a>
+              <a href="../site_pages/under_construction.html">Projects</a>
+              <a href="../site_pages/under_construction.html">Dev Bootcamp</a>
+              <a href="blogindex.html">Blog</a>
+              <a href="../site_pages/under_construction.html">Links</a>  </h4>
+
+         
+        </footer>
+
+</body>
