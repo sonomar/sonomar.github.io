@@ -29,7 +29,7 @@ th {
 
 .footer {
 	position: relative;
-	top: 46em;
+	top: 52em;
 }
 
 h4 a {
@@ -66,12 +66,16 @@ h4 a:hover {
 	color: red;
 }
 
-#calendar {
+#contact {
 	position: relative;
 	top: 45em;
 	left: 60em;
 	width: 8em;
 	text-align: center;
+}
+
+#calpng {
+	height:5em;
 }
 
 #biglinks {

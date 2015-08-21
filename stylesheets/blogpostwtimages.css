@@ -122,3 +122,16 @@ h4 a:hover {
 #diagramlist li{
 	list-style-type: none;
 }
+
+p a:link {
+	color: black;
+}
+
+p a:hover {
+	color: purple;
+}
+}
+
+p a:visited {
+	color: black;
+}

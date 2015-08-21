@@ -117,3 +117,16 @@ h4 a:hover {
 .example pre code {
 	width: 5em;
 }
+
+p a:link {
+	color: black;
+}
+
+p a:hover {
+	color: purple;
+}
+}
+
+p a:visited {
+	color: black;
+}
