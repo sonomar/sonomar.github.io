@@ -3,7 +3,7 @@
 	text-align: center;
 	font-style: bold;
 	left:11.1em;
-	top:6.5em;
+	top:3.5em;
 	z-index: -1;
 	font-size: 3em;
 	width: 4em;	
@@ -16,8 +16,8 @@
 	margin-left: 5px;
 	width: 8em;
 	font-size: 2em;
-	left: 6.5em;
-	top: 11em;
+	left: 6em;
+	top: 6em;
 	z-index: -1;
 }
 
@@ -44,7 +44,7 @@
 	width: 8em;
 	font-size: 2em;
 	left: 25em;
-	top: 11em;
+	top: 6em;
 	z-index: -1;
 }
 
@@ -73,7 +73,7 @@
 	padding: .3em;
 	text-align: center;
 	position: absolute;
-	top: 19em;
+	top: 16em;
 	left: 13.2em;
 }
 
@@ -91,7 +91,7 @@
 	padding: .3em;
 	text-align: center;
 	position: absolute;
-	top: 22em;
+	top: 18.5em;
 	left: 13.2em;
 }
 
@@ -102,7 +102,7 @@
 
 #blogimage img {
 	position: absolute;
-	top: 33em;
+	top: 25em;
 	height: 14em;
 	left: 32em;
 	z-index: -1
@@ -110,7 +110,7 @@
 
 .footer {
 	position: relative;
-	top: 63em;
+	top: 52em;
 }
 
 h4 a {

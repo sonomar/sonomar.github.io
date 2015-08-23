@@ -1,8 +1,8 @@
 #blogpost {
 	position: absolute;
-	top:19.5em;
+	top:10em;
 	z-index: -1;
-	left: 10%;
+	left: 8em;
 }
 
 #blogpost h1 {
@@ -21,8 +21,9 @@
 
 .footer {
 	position: fixed;
-	bottom: 0;
+	bottom: -.5em;
 	padding-right:.5em;
+	width: 100%;
 	color: white;
 	background-color: black;
 }
@@ -50,7 +51,7 @@ h4 a:hover {
 	border: black 2px solid;
 	padding: .3em;
 	position: fixed;
-	bottom: 3em;
+	bottom: 11em;
 	left:50em;
 
 }
@@ -71,7 +72,7 @@ h4 a:hover {
 	border: black 2px solid;
 	padding: .3em;
 	position: fixed;
-	bottom: .5em;
+	bottom: 8em;
 	left: 50em;
 }
 
