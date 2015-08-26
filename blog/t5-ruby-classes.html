@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<head>
+  <title>t5-ruby-classes</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/parent.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogpost.css">
+</head>
+
+<body>
+
+    <section id="topofpage">
+
+      <img class="topimages" id="portrait" src="../imgs/portrait.jpg" alt="picoflawson"/>
+      
+      <img class="topimages" id="banner" src="../imgs/talinn.png" alt="bannerpic"/>
+
+        <h1 id="title">Lawson Marlowe</h1>
+
+          <h2 id="catchphrase">Coding the Human Mind</h2>
+
+            <h3 class="toplinks">
+              <p><span id="filler">This is filler to make the links work</span>
+              <a id="toplinkprofile" href="../site_pages/under_construction.html"> Profile </a>
+              <a id="toplinkprojects" href="../site_pages/under_construction.html"> Projects </a>
+              <a id="toplinkblog" href="blogindex.html"> Blog </a>
+              <a id="toplinklinks" href="../site_pages/under_construction.html"> Links </a></p>
+
+              </h3>
+    </section>
+
+<section id="blogpost">
+  <h1>Week 5, Day 3</h1>
+  <h2>Ruby Classes and Instance Variables</h2>
+  <h4>August 26th, 2015</h4>
+
+    <section>
+
+      <p>
+ Most things in the world do more than one thing. A frog can croak and leap and stick out its tongue. A book can open and can show you a title and words. Even a rock can erode over time and be picked up and thrown. When programming in ruby, a method can be called anything, and can be told to perform an action, but when that method is called, it will only perform that one action. If we want to create something in code that perform multiple actions using multiple methods, we create a class.     
+      </p>
+      <p>
+A class is built very similarly to a method, in that both start with a definition of the class or method. For methods, we define a new one with 'def'. For classes, we define a new one with 'class.' Just like with a method, everything within the new class will be between the definition and the 'end' label. Here's an empty class:
+      </p>
+      <pre class="example">
+      
+      class Frog
+
+      end 
+      
+      </pre>
+See? Just like a method, all of your code goes between the class declaration and the 'end' declaration. Unlike methods, the title of the class, always written after defining the class, should be capitalized (see how 'Frog' is captialized above?). Once we have the 'walls' of the class built and titled, we can start defining what the class, in this case 'Frog', does.
+      <p>
+In order to tell Frog to do something, we create methods within the class. Here's a method called croak, typed within the class:
+      </p>
+      <pre class="example">
+      
+      class Frog 
+
+        def croak
+          puts "ribbit!"
+        end
+
+      end
+      
+      </pre>
+      <p>
+In order to make a class perform one of its methods, we can't just call on the class directly, because ruby won't know how to do that. The first thing we need to do is create a new object that uses the Frog class and call it frog. To do that we type in 'frog = Frog.new.' The object 'frog' has now been given the ability to perform and utilize all of the methods inside the Frog class. We can now call on the 'croak' method within the frog class by typing 'frog.croak' (object.method). Testing this code on the console will return 'ribbit!', just like we progammed it to. If we had three other methods that each told the frog to say something different, calling those methods would also put those new statements to the console. Look at this example:
+      </p>
+      <pre class="example">
+      
+      class Frog
+
+        def croak
+          puts "ribbit!"
+        end
+
+        def ribbit
+          puts "ribbit!"
+        end
+
+        def frog_sound
+          puts "ribbit!"
+        end
+
+      end 
+      
+      </pre>
+      <p>
+As you can see, initializing the Class to 'frog' then calling frog.croak, frog.ribbit or frog.frog_sound will all result in "ribbit!" being put to the console. What if, in this case, the frog we were quoting were a frog-prince? What if the quote he said after each of the above methods were a ten-line Shakespearean sonnet? It would be awfully irritating and messy to write that sonnet five times (even annoying to paste over and over!). Ruby created a solution to this problem, and we call them instance variables. 
+      </p>
+       <p>
+In the hierarchy of ruby, there are many tiers, and in each of those tiers, a variable can be created. A variable inside a method is just a plain-old variable, and can only be used inside the method it was created within. When we create a class, however, we can use what are called instance variables. These variables can be used anywhere within the class, even within different methods. An instance variable looks like any one of these examples:
+      </p>
+      <pre class="example">
+      
+      @frog @book @rock @x @y @z
+      
+      </pre>
+       <p>
+Notice how every one of these variables has an '@' sign in front of it? That's exactly how you define any variable as an instance variable. Remember when we initialized the Frog class above by setting the object 'frog' equal to 'Frog.new'? When a class is initiated in this way, it looks for a method within its code called 'initialize'. Anything within this method when the class is initialized like Frog was will follow the instructions of any code within that method. Let's take a look at the Frog class with an 'initialize' method:       
+      </p>
+      <pre class="example">
+      
+      class Frog
+
+        def initialize(frog_type)
+         @frog_type = frog_type
+
+        def croak
+          puts "ribbit!"
+        end
+
+        def ribbit
+          puts "ribbit!"
+        end
+
+        def frog_sound
+          puts "ribbit!"
+        end
+
+      end 
+      
+      </pre>
+      <p>
+Now, when we type frog = Frog.new("Tree Frog") below our code and run it in the console, frog inherits everything within the 'initialize' method! In this case, frog inherited an instance variable called @frog_type, which is connected to the argument in the parenthesis after 'initialize'. We don't have to use the 'initialize' method with an argument, but if we do, we need to be sure to fill in that argument when we initialize the object (frog) with the class (Frog), as I did at the beginning of the paragraph. From now on, we cannot initialize the Frog class without specifying what kind of frog this is.       
+      </p>
+      <p>
+Let's step back a bit, though, and say that once again, 'frog' is a sonnet-shouting "Frog Prince". Let's initialize the class by saying frog = Frog.new("Frog Prince"). Now we're going to want to change each of the quotes in each of the methods within Frog into a shakespearian sonnet. Instead of writing those sonnets multiple times, we can create one instance variable in the 'initialize' method (no argument needed), and call that variable @sonnet. By setting that variable equal to the sonnet in question (in quotes, so it's a string), we can call on that variable any time by simply telling the console to print @sonnet instead of the whole quote. Here's the code:       
+      </p>
+      <pre class="example">
+      
+      class Frog
+
+        def initialize(frog_type)
+         @frog_type = frog_type
+         @sonnet = "If I should think of love I'd think of you,\n
+         Your arms uplifted,\n
+         Tying your hair in plaits above,\n
+         The lyre shape of your arms and shoulders,\n
+         The soft curve of your winding head.\n
+         No melody is sweeter, nor could Orpheus So have bewitched.\n
+         I think of this,\n
+         And all my universe becomes perfection.\n
+         But were you in my arms, dear love,\n
+         The happiness would take my breath away,\n
+         No thought could match that ecstasy,\n
+         No song encompass it, no other worlds.\n
+         If I should think of love, I'd think of you."
+
+        def croak
+          puts "I am a #{@frog_type}, and this is my poem!"
+          puts @sonnet
+          puts "ribbit!"
+        end
+
+        def ribbit
+          puts @sonnet
+          puts "ribbit!"
+        end
+
+        def frog_sound
+          ribbit
+          puts @sonnet
+          puts "ribbit!"
+        end
+
+      end
+
+      frog = Frog.new("Frog Prince")
+      frog.croak
+      frog.ribbit
+      </pre> 
+      <p>
+Much easier than doing that multiple times, right? And look, we now have a class that turns a frog into a poet! The reason we need that '@' sign in front of the variable is that while a variable can be understood within the method it was created in, it cannot be used outside that method. So while we could add a variable 'sonnet' to the 'initialize' method, we could not then call that variable within the 'ribbit', 'croak' or 'frog_sound' methods. You'll notice in the 'croak' method that I added a string referencing the initialized @frog_type variable. If you aren't sure what this will do, put this code into a '.rb' file and test it out on your console!        
+      </p>
+      <p>
+Last but not least for this basic lesson, you'll notice that I called the 'ribbit' method within the 'frog_sound' method. Feel free to do this within a class. In this case, calling the 'frog_sound' method (frog_sound.method) will output @sonnet and "ribbit!" twice, as it would if we called ribbit, then frog_sound. If you have a lot of code to type in one method, and all of those codes do different things, it can be handy to split that code up into methods, then call those methods within other methods. If you wanted the frog to stick out his tongue and catch a fly, for example, you may want to create a method called 'stick_out_tongue' that you would call within the method 'catch_a_fly', so you could call 'stick_out_tongue again in the methods 'catch_a_gnat' and 'catch_a_horse_fly'!       
+      </p>
+      <p>
+I hope you learned the basics of creating and modifying a class in ruby. Creating code in ruby, like many things in life, gets easier with practice, so keep creating new classes and see what you can come up with!       
+      </p>
+
+    </section>
+</section>
+
+
+        <aside id="mainbutton">
+          <a href="../index.html">Main Page</a>
+        </aside>
+
+        <aside id="blogbutton">
+          <a href="blogindex.html">Blog List</a>
+        </aside>  
+
+
+        <footer class="footer">
+
+            <h4 id="copyright">Copywrite Information, MIT License
+
+              <a href="../site_pages/under_construction.html">Site Map</a>
+              <a href="../site_pages/under_construction.html">About Me</a>
+              <a href="../site_pages/under_construction.html">Projects</a>
+              <a href="../site_pages/under_construction.html">Dev Bootcamp</a>
+              <a href="blogindex.html">Blog</a>
+              <a href="../site_pages/under_construction.html">Links</a>  </h4>
+
+         
+        </footer>
+
+</body>
