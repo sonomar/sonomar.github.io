@@ -41,6 +41,7 @@
 }
 
 #resume {
+
 	position: relative;
 	border: 1px black solid;
 	border-radius: 10px;
@@ -48,9 +49,9 @@
 	left:11.8em;
 	top: 6em;
 	width: 3.5em;
-	z-index: -1;
 	font-size: 3em;
 	text-align: center;
+	z-index: 0;
 }
 
 #resume a:link {
