@@ -40,6 +40,22 @@
 	text-decoration: underline;
 }
 
+#opera {
+	position: relative;
+	right: 12em;
+}
+
+#tech {
+	position: relative;
+	bottom: 12.7em;
+}
+
+#psych {
+	position: relative;
+	bottom: 25.4em;
+	left: 12em;
+}
+
 #resume {
 
 	position: relative;
@@ -47,7 +63,7 @@
 	border-radius: 10px;
 	font-style: bold;
 	left:11.8em;
-	top: 6em;
+	top: -7em;
 	width: 3.5em;
 	font-size: 3em;
 	text-align: center;
@@ -67,7 +83,7 @@
 	position: relative;
 	font-style: bold;
 	left:17em;
-	top:14em;
+	top:-12em;
 	z-index: -1;
 	font-size: 1.5em;
 	width: 4em;	
@@ -97,7 +113,7 @@
 	position: relative;
 	font-style: bold;
 	left:10.3em;
-	top:11em;
+	top:-6em;
 	z-index: -1;
 	font-size: 2em;
 	width: 4em;	
@@ -113,6 +129,32 @@
 	font-size: .7em
 }
 
+#phototower1 img {
+	position: absolute;
+	height: 60em;
+	top: 15em;
+}
+
+#phototower2 img{
+	position: absolute;
+	height: 48em;
+	top: 15em;
+	left:69em;
+}
+
+#phototower3 img {
+	position: absolute;
+	left: .5em;
+	height: 48em;
+	top: 75em;
+}
+
+#phototower4 img{
+	position: absolute;
+	height:60em;
+	top: 63em;
+	left:69em;
+}
 #mainbutton {
 	border-radius: 5px;
 	font-size: 20px;
@@ -120,7 +162,7 @@
 	border: black 2px solid;
 	padding: .3em;
 	position: absolute;
-	top: 86.5em;
+	top: 100em;
 	left: 44em;
 
 }
@@ -130,7 +172,7 @@
 
 .footer {
 	position: absolute;
-	top: 108em;
+	top: 125em;
 }
 
 h4 a {
