@@ -35,8 +35,17 @@
 	color: white;
 	left: 2.8em;
 	z-index: 4;
-	top: -.5em;
-	
+	top: -.5em;	
+}
+
+#title a {
+	text-decoration: none;
+	color: white;
+}
+
+#title a:visited {
+	color: white;
+	text-decoration: none;
 }
 
 #catchphrase {
@@ -56,8 +65,8 @@
 	font-size: 20px;
 	font-family: Serif;
 	color: white;
-	top: 6.5em;
-	left: 0em;
+	top: 7.5em;
+	left: 10em;
 	z-index: 4;
 }
 
