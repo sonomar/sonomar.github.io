@@ -1,6 +1,5 @@
 #blogpost {
 	position: absolute;
-	top:10em;
 	z-index: -1;
 	left: 8em;
 }

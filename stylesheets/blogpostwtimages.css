@@ -1,6 +1,6 @@
 #blogpost {
 	position: absolute;
-	top:19.5em;
+	top:0em;
 	z-index: -1;
 }
 
@@ -103,13 +103,13 @@ h4 a:hover {
 	text-align: center;
 	text-decoration: underline;
 	left: 36em;
-	top: 28em;
+	top: 12em;
 	z-index: -1;
 
 }
 
 #diagramlist img {
-	height: 10em;
+	height: 14em;
 	top: 30%;
 }
 
@@ -120,6 +120,8 @@ h4 a:hover {
 }
 
 #diagramlist li{
+	padding-top: 10px;
+	padding-bottom: 10px;
 	list-style-type: none;
 }
 
