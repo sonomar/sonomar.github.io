@@ -39,6 +39,22 @@
 	text-decoration: none;
 }
 
+#cheat-sheet {
+    position: absolute;
+    border-radius: 20px;
+	font-style: bold;
+	border: 1px black solid;
+	left:15.2em;
+	top:17em;
+	z-index: 0;
+	font-size: 2em;
+	color: black;
+	padding: .2em;
+	width: 10em;
+	text-align: center;
+	text-decoration: none;
+}
+
 #mainbutton {
 	border-radius: 5px;
 	font-size: 20px;
