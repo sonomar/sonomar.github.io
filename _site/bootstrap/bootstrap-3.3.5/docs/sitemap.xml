@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://yourdomain.com/</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/about.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/about/</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/browser-bugs.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/components.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/css.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/customize.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/getting-started.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/javascript.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://yourdomain.com/bootstrap/bootstrap-3.3.5/docs/migration.html</loc>
+    <lastmod>2015-09-25T18:54:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+</urlset>
