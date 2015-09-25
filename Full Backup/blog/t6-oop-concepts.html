@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<head>
+  <title>t6-oop-concepts</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/parent.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogpost.css">
+</head>
+
+<body>
+
+  <!--   <section id="topofpage">
+
+      <img class="topimages" id="portrait" src="../imgs/portrait.jpg" alt="picoflawson"/>
+      
+      <img class="topimages" id="banner" src="../imgs/talinn.png" alt="bannerpic"/>
+
+        <h1 id="title"><a href="../index.html">Lawson Marlowe</h1>
+
+          <h2 id="catchphrase">Coding the Human Mind</h2>
+
+            <h3 class="toplinks">
+              
+              <a id="toplinkprofile" href="../site_pages/about.html"> About </a>
+              <a id="toplinkprojects" href="../site_pages/under_construction.html"> Projects </a>
+              <a id="toplinkblog" href="blogindex.html"> Blog </a>
+              <a id="toplinklinks" href="../site_pages/under_construction.html"> Links </a></p>
+
+              </h3>
+    </section> -->
+
+<section id="blogpost">
+  <h1>Week 6, Day 4</h1>
+  <h2>Modules in the Kitchen</h2>
+  <h4>September 3rd, 2015</h4>
+
+    <section>
+
+      <p>
+What if I told you that you had a new storage bin in your kitchen, and that it would help you keep all of the important cleaning supplies safe but out of sight. Now what if that storage bin also had buttons on it that magically allowed your other kitchen tools to take on the traits of whatever was in that bin? Your blender could clean the dishes, your microwave could mop the floors, and your kitchen itself could utilize all of those tools at once to make itself clean if you ask it to. That bin may not exist in the real world, but in the magical land of ruby coding, it does exist, and it's called a module.      
+      </p>
+      <p>
+Modules, like a plastic bin, don't seem to be all that much at first. Here's an example of a basic module:
+      </p>
+      <pre class="example">
+      
+      module Kitchen
+        light = "off"
+      end 
+      
+      </pre>
+      <p>
+If you don't know what a Ruby class is, much less a module, you can learn more about them and what their instance methods do in my previous technical blog entry, which discusses poetic frogs about as much as I'm talking about kitchen tools today: Previous entry link. In summary, classes are blocks of code that make the main pieces of your program run. In a program called Kitchen, the classes and their variables would control the various appliances, lights, and even food that may be found in that kitchen.
+      </p>
+      <p>
+Modules look a lot like classes, and act a lot like them too. They're even slightly more complicated to utilize, so at first it seems like you would never need them when you can just build classes on top of classes, right? Well, just like the fancy imaginary storage bin, having one of these modules around can make it much easier to create code for multiple classes and for that module alone, giving you more control over your program than you'd ever have without it. 
+      </p>
+      <p>
+When you create multiple classes in ruby, and you're calling on other classes, you become more and more constricted by the information contained in each of those classes (especially if those classes contain instance variables being used in more than one method!) You can, however, create a module with all of the methods you want to use in each class, and call up that module to make use of it as if it were sitting in the class itself. Not only does this give you a clean, separate bit of code whenever you need it, but it keeps your classes free to operate simply and without the need for massive amounts of change.
+      </p>
+      <p>
+There are two types of methods within a module. A module method, and an instance method. Instance methods are created just like in a regular class:
+      </p>
+      <pre class="example">
+
+      module KitchenLights
+        
+        def light_setup
+          @lights_on = false
+        end
+
+        def flip_switch
+          if @lights_on = false
+            @lights_on = true
+            puts "the lights are on"
+          elsif @lights_on = true
+            @lights_on = false
+            puts "the lights are off"
+          end
+        end
+        
+        def check_lights
+          if @lights_on = false
+            puts "the lights are off"
+          elsif @lights_on = true
+            puts "the lights are on"
+          end
+        end
+
+      end 
+      
+      </pre>
+      <p>
+The trick with these methods in a module, though, is that you can't call on them like you would with a class. If I tried to set a variable to a new instance of a module and call the instance method, it wouldn't work (the following example uses the module above as reference):
+      </p>
+      <pre class="example">
+
+      lights = KitchenLights.new
+      lights.light_setup
+      
+      ==> undefined method `new' for KitchenLights:Module (NoMethodError)
+      
+      p KitchenLights.light_setup
+      p KitchenLights.flip_switch
+
+      ==> undefined method `light_setup' for KitchenLights:Module
+          (NoMethodError)
+     
+      </pre>
+      <p>
+If, however, I were to call on that module in another class, and call on that instance method within the class, it would be accessible within the class and when calling a new instance of that class:
+      </p>
+      <pre class="example">
+      
+      class KitchenGadgets
+    
+        include KitchenLights 
+
+        def initialize(gadget = ["microwave", "refrigerator"])
+          @gadget = gadget
+        end
+
+      end
+
+      gadget = KitchenGadgets.new
+      p gadget.light_setup
+      p gadget.flip_switch
+
+      ==>false
+      ==>the lights are on
+       
+      </pre>
+       <p>
+I can also call another type of method, called module methods. These look a bit different and are called differently than instance methods. Take a look at this example of the same module calling module methods instead of instance methods:
+      </p>
+      <pre class="example">
+      
+      module KitchenLights
+      
+        BRAND1 = "Lightspeed"
+
+        def KitchenLights.name_lights(brand)
+          @brand = brand
+          p "These lights are #{@brand}s!"
+        end
+
+        def KitchenLights.light_setup
+          @lights_on = false
+        end
+
+        def KitchenLights.check_lights
+          if @lights_on == false
+            puts "the lights are off"
+          elsif @lights_on == true
+            puts "the lights are on"
+          end
+        end
+
+        def KitchenLights.flip_switch
+          if @lights_on == false
+            @lights_on == true
+            puts "the lights are on"
+          elsif @lights_on == true
+            @lights_on = false
+            puts "the lights are off"
+          end
+        end
+      end
+      
+      book = KitchenLights.name_lights(KitchenLights::BRAND1)
+      book
+      lights = KitchenLights.light_setup
+      lights
+      check = KitchenLights.check_lights
+      check
+
+      ==>"These lights are Lightspeeds!"
+      ==>the lights are off
+      
+      </pre>
+      <p>
+These methods can only be called from the module themselves, and always start with the name of the module followed by the name of the method (with a period in between). Also keep in mind that variables created in modules should be in all caps (global) so that they can be called outside the module. Also, when referencing a variable when calling an instance of a module method, reference the name of the method first, followed by two colons, followed by the variable name. Having module specific methods can make them useful while also keeping them from interfering with the classes beyond. Think of these methods like a screwdriver used to fix the mop in the magic bin before the refrigerator takes on its traits.
+      </p>
+      <p>
+Speaking of magic, how does the rest of the kitchen take on the traits of the bin, or literally, how do modules mix into other classes? All the classes need to do is call them! If the module is located in another document, the document containing the class simply needs to call 'require [module name], where the module name is the name of the required file. Once that's done, each class that is going to use the module simply needs to write 'include [Module]' without the quotes, and substitute the module's name directly below the Class constant (I.E. 'class Elephant')! Once the module has been called, you can freely access any instance variables and methods from that module as you need. Pretty cool, huh?
+      </p>
+      <p>
+ I mentioned in my metaphor that the entire kitchen itself can use the magic cleaning bin. Who does this work with ruby? Well, ruby itself uses and can have modules installed into its framework so that they're easy to access and make use of without calling them every time. One module people often use without realizing it is the Enumerable module. Enumerable has many methods, including '.each', that are used all the time in ruby, and without this module as a part of the system, you wouldn't be able to automatically access those kinds of methods. The same is true for the Comparable module, which allows you to use symbols such as '<', '>', and '<=>' on various objects in ruby.
+      </p>
+      <p>
+Now that you know what a module is, what it looks like, and how to create methods in it and call them elsewhere, there are a couple of things to be aware of. First of all, if you call multiple modules in one class and both have instance variables with the same names, the first method you called is going to use the dominating variable, and the results of that variable from the first module will always be used for variables of that name. The other thing to be careful of is that you don't start making your modules into make-shift classes. Modules don't have initialization methods, and are meant to store extra code to use throughout your classes. Don't be afraid to use a lot of them (and give them all names and variables that won't be used elsewhere), but also remember to keep your central operations for each class within a class.
+      </p>
+      <p>
+Because ruby is such an open object-oriented-system, it's tempting to break the rules and use classes or modules the wrong way, but in the end, code is meant to be used, shared, and modified, and unless you're keeping your organization system all to yourself, you should probably keep things easy to read by everyone, and organized properly. The devices in your kitchen are the classes, while the bins and cabinets containing the cleaning and fixing supplies that make those classes run properly and easier to access are the modules. Both used correctly make for an organized and often cleaner kitchen. Some people like to store mops in the refrigerator and screwdrivers in the microwave, but I really wouldn't recommend it, since you may forget where they are, and they can easily cause the whole kitchen to catch on fire with the wrong button press.
+      </p>
+      <p>
+If you'd like to learn more technical information about modules versus classes, take a look at this Ruby-Docs article: <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">Programming Ruby: Modules</a>     
+      </p>
+      <p>
+This RubyMonk primer is also pretty good (it discusses stacking modules within modules for some extra-complicated reading): <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/35-modules/lessons/80-modules-as-namespaces">Modules As Namespaces</a>   
+      </p>
+
+    </section>
+</section>
+
+
+        <aside id="mainbutton">
+          <a href="../index.html">Main Page</a>
+        </aside>
+
+        <aside id="blogbutton">
+          <a href="blogindex.html">Blog List</a>
+        </aside>  
+
+
+        <footer class="footer">
+
+            <h4 id="copyright">Copywrite Information, MIT License
+
+              <a href="../site_pages/under_construction.html">Site Map</a>
+              <a href="../site_pages/about.html">About Me</a>
+              <a href="../projects/index.html">Projects</a>
+              <a href="../projects/dbc.html">Dev Bootcamp</a>
+              <a href="blogindex.html">Blog</a>
+              <a href="../site_pages/under_construction.html">Links</a>  </h4>
+
+         
+        </footer>
+
+</body>

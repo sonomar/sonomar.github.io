@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+  <title>t8-tech</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/parent.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogpost.css">
+</head>
+
+<body>
+
+   <!--  <section id="topofpage">
+
+      <img class="topimages" id="portrait" src="../imgs/portrait.jpg" alt="picoflawson"/>
+      
+      <img class="topimages" id="banner" src="../imgs/talinn.png" alt="bannerpic"/>
+
+        <h1 id="title"><a href="../index.html">Lawson Marlowe</h1>
+
+          <h2 id="catchphrase">Coding the Human Mind</h2>
+
+            <h3 class="toplinks">
+              
+              <a id="toplinkprofile" href="../site_pages/about.html"> About </a>
+              <a id="toplinkprojects" href="../projects/index.html"> Projects </a>
+              <a id="toplinkblog" href="blogindex.html"> Blog </a>
+              <a id="toplinklinks" href="../site_pages/under_construction.html"> Links </a></p>
+
+              </h3>
+    </section> -->
+
+<section id="blogpost">
+  <h1>Week 8, Day 2</h1>
+  <h2>Sorting Algorithms for Picture Day</h2>
+  <h4>September 15th, 2015</h4>
+
+    <section>
+
+      <p>
+For some photographers, taking group pictures is a science. Not only do you need the right kind of camera, a good setting with proper light, and a nice backdrop. You also need to be able to quickly and efficiently sort all of the people in the group into rows from shortest person to tallest! Depending on how rowdy the group is, and how many people are in the group, and how a photographer chooses to sort all of these people, this sorting process can take anywhere from a few minutes to the entire day.    
+      </p>
+      <p>
+Believe it or not, computer programmers using every kind of language from ruby to JavaScript go through almost the exact same process when sorting a piece of code. While the numbers in an array may not have the rowdiness of a college class, there are often many more of them to sort than even thirty rows of students. A programmer doesn't want their search algorithm to take an entire day, though, and often can't afford to have it take that long if they need to sort through an immense array of integers multiple times in a day.
+      </p>
+      <p>
+Over the years, programmers have searched for ways to sort through code more efficiently, and often the algorithms they figure out only work in specific circumstances. For that group photographer, it's
+easy to tell a group of ten people one-by-one where to line up for the photo and take the picture soon
+after, while strategies are involved to tell an entire office staff where to stand. Does the photographer shout a general pattern for each row to follow based on a random person in that row? Or do they walk through the crowd multiple times, switching certain members of the office with the person next to them until everyone is in the correct place? Or does the photographer get crafty and pull small groups of office workers aside and tell them how to organize so that they can figure out how work together without any prodding? 
+      </p>
+      <p>
+Each of the photography examples above actually represent three different search techniques that programmers have used over the years. Whether or not these algorithms are used today, it is important to understand how each type works in order to develop new search techniques in the future. The first search technique I'll discuss is called a bubble search.
+      </p>
+      <p>
+The bubble search is usually only used today in order to explain why older search methods are faulty. At first, this search method will seem very efficient, but the bigger a group gets, the slower the bubble search gets, to a point where it's not very practical to use it at all.  The bubble search works by passing through the search data multiple times, each time swapping items in the data with the items next to them if they need to be switched in order to appease the search terms. On every pass through all of the data, the bubble search checks once more for misplaced data and fixes it. Finally, when a pass through the data yields no swaps, the sort is considered complete. Here is an example of an array being sorted with this method from smallest number to largest:
+      </p>
+      <pre class="example">
+
+      Sorting an array using a 'bubble sort'
+      ______________________________________
+
+      Unsorted array: [9,5,3,2,6,8,4,2,7,]
+      First pass: [5,2,3,6,8,4,2,7,9]
+      Second pass: [2,3,5,6,4,2,7,8,9]
+      Third pass: [2,3,5,4,2,6,7,8,9]
+      Foutth pass: [2,3,4,2,5,6,7,8,9]
+      …
+      …
+      ...
+      And etc. until : [2,2,3,4,5,6,7,8,9]
+      </pre>
+      <p>
+As you can see, it can take a lot of passes just to sort a few different numbers. In this case, the bubble sort will focus on pushing over the first swappable number in a set, and if that number is high enough, like the '9' in the first slot of the array above, the bubble sort will focus on moving that 9 from one end of the array to the other, and not much else. With small arrays, this sorting method can work fine, but as the arrays being sorted through get bigger and bigger, I'm sure you can already see how ineffective this is. When creating an search algorithm, it's important to be efficient, after all, and the quick search is a much more efficient way to search ineffectively.
+      </p>
+      <p>
+The quick search, like the bubble search, is not the fastest way to search through a large array of objects. That said, when a smaller search is needed with as little coding as possible, the quick search can often do that job, albeit unpredictably. The reason the quick search is hard to predict is based on the way it works. The quick sort chooses a random element within an array, and then looks through each pair of items to the left and right of that random element, swapping them if necessary according to the sort criteria. After the swapping is complete, the sort picks another random point and performs the swap to the left and right of that point until all items have been sorted. Here's an example of the quick sort in action with the same array as above:       
+      </p>
+      <pre class="example">
+
+      Sorting an array using a 'quick sort'
+      _____________________________________
+
+      Unsorted array: [9,5,3,2,6,8,4,2,7,]
+      First random element: 3
+      First pass: [5,9,(3),2,6,4,2,7,8]
+      Second random element: 7
+      Second pass: [5,3,2,6,4,2,9,(7),8]
+      Third random element: 4
+      Third pass: [3,2,5,6,(4),2,7,8,9]
+      ...
+      ...
+      ...
+      And etc. until: [2,2,3,4,5,6,7,8,9]
+      </pre>
+      <p>
+At first glance, this search seems even slower than the bubble search, right? Well, did you notice how much more of the search was completed when the random element chosen was in the middle of the array? Programmers using quick sort are either hoping that the quick sort chooses these middle-elements more often in order to make the search more efficient, or program the search to always choose the median number in a list as the random element. The extra programming will slow down the search quite a bit, however, which is why many programmers will still choose to let the search pick those elements randomly. Because there is no way to predict the random element in the quick sort without slowing down the sort quite a bit, the bigger the array being searched means the less efficient the quick search becomes. So is there an effective search method that is fast and precise? The merge sort is at least a step in the right direction.
+      </p>
+      <p>
+The merge sort takes the best ideas from the bubble sort and quick sort and implements them together to create a much better sort method overall. This sorting algorithm first splits the array being searched into pairs. It then sorts each pair according to the search criteria. The sort then compares groups of four instead of two, comparing the first number of the first pair to each number of the second pair, then the second number of the first pair to each number of the second pair. If there are more other groups of four in the array, it will then do this with the next group. Then the merge will split the numbers into groups of eight. comparing the two groups of four one item at a time. This process repeats with larger groups slowly merging until the array is sorted. Here's a look at the merge sort in action:       
+      </p>
+      <pre class="example">
+
+      Sorting an array using a 'merge sort'
+      _____________________________________
+
+      Unsorted array: [9,5,3,2,6,8,4,2,7,]
+      First grouping: (9,5), (3,2), (6,8), (4,2), (7)
+      First pass: (5,9), (2,3), (6,8), (2,4), (7)
+      Second grouping: (5,9,2,3), (6,8,2,4), (7) 
+      Second pass: (2,3,5,9), (2,4,6,8), (7) 
+      Third grouping: (2,3,5,9,2,4,6,8)(7)
+      Third pass: (2,2,3,4,5,6,8,9)(7)
+      Fourth grouping: (2,2,3,4,5,6,8,9,7)
+      Fourth Pass: (2,2,3,4,5,6,7,8,9) <= Sorted!
+      </pre>
+      <p>
+The merge sort worked like a charm for this array, and from its creation in 1945 by John von Neumann to today, it has been used often for the speed and accuracy shown in the example above. So why do the other sort systems exist when this one works so well? Well, the merge sort still isn't perfect. While it's relatively quick, it still requires multiple steps for each part of the search, while with the right luck, a quick sort could use far less. Even today, many programmers prefer the quick sort for some programs based on speed over time for multiple, smaller searches.
+      </p>
+      <p>
+Just like no photographer knows how to properly organize every possible group of people of any size, no programmer has found a perfect sort method for every possible program. Just like understanding the various methods and functions built into any programming language, a programmer needs to understand the various sort algorithms used today, which ones are more efficient for certain codes, and which are better suited for others. Without calculating the speed of different sorts against a code, however, one can only make an educated guess on which to use.
+      </p>
+      <p>
+With that said, I hope the sort types above have taught you a little bit about how various sort algorithms work, but you'll probably want to know all about the other sorting styles programmers use nowadays. Please check out this link to read all about the various sorting algorithms and watch animations of the sorts doing their thing: <a href="http://www.sorting-algorithms.com">sorting-algorithms</a>. Now stand still, look at the camera and say cheese!
+      </p>
+
+    </section>
+</section>
+
+
+        <aside id="mainbutton">
+          <a href="../index.html">Main Page</a>
+        </aside>
+
+        <aside id="blogbutton">
+          <a href="blogindex.html">Blog List</a>
+        </aside>  
+
+
+        <footer class="footer">
+
+            <h4 id="copyright">Copywrite Information, MIT License
+
+              <a href="../site_pages/under_construction.html">Site Map</a>
+              <a href="../site_pages/about.html">About Me</a>
+              <a href="../projects/index.html">Projects</a>
+              <a href="../projects/dbc.html">Dev Bootcamp</a>
+              <a href="blogindex.html">Blog</a>
+              <a href="../site_pages/under_construction.html">Links</a>  </h4>
+
+         
+        </footer>
+
+</body>
