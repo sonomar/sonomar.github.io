@@ -43,18 +43,18 @@ h2 {
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     top: -15em;
     left: 12em;
-    font-size: 1.3em;
+/*    font-size: 1.3em;
     height: 1.5em;
-    width: 8em;
+    width: 8em;*/
 }
 
 #projects li {
 	position: relative;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     left: .5em;
-    font-size: 1.3em;
+/*    font-size: 1.3em;
     height: 1.5em;
-    width: 8em;
+    width: 8em;*/
 }
 
 h3 a {
