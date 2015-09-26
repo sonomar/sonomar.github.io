@@ -19,29 +19,38 @@ h1 {
 }
 
 #subtitle {
-    position: absolute;
+    position: relative;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    top: 1.5em;
-    left: 1em;
+    top: -4.5em;
+    left: .5em;
     font-size: 3em;
     width: 8em;
 }
 
 h2 {
-    position: absolute;
+    position: relative;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    top: 8em;
-    left: 1em;
+    top: -7em;
+    left: .5em;
     font-size: 2em;
     height: 2em;
     width: 8em;
 }
 
-li {
+#interest-list ul li{
     position: relative;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    top: .5em;
-    left: 1em;
+    top: -15em;
+    left: 12em;
+    font-size: 1.3em;
+    height: 1em;
+    width: 8em;
+}
+
+#projects li {
+	position: relative;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    left: .5em;
     font-size: 1.3em;
     height: 1em;
     width: 8em;
@@ -97,9 +106,9 @@ p img {
 }
 
 #portrait {
-    position: absolute;
-    top: 135em;
-    left: 36em;
+	float: right;
+	margin-right: 20em;
+	margin-top: 4em;
     height: 30em;
 }
 
