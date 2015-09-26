@@ -133,7 +133,7 @@ p img {
 	background: url('../imgs/bg1law2.jpg') no-repeat center fixed;
     color:#fff;
     top: 10em;
-    background-size:100%;
+    background-size:cover;
 }
   
 .bg-2 {
