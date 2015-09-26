@@ -84,6 +84,12 @@ h3 a {
 
 #dbcbloghead {
     top: -1.5em;
+    text-decoration: none;
+	color: black;
+	border: 3px black solid;
+	border-radius: 5px;
+	background-color: lightblue;
+	padding: .2em;
 }
 
 #twitter{
@@ -102,6 +108,15 @@ h3 a {
     font-size: 2em;
     margin: 0em;
 
+}
+
+#aboutlink {
+	text-decoration: none;
+	color: black;
+	border: 3px black solid;
+	border-radius: 5px;
+	background-color: lightblue;
+	padding: .2em;
 }
 
 .link-buttons {
